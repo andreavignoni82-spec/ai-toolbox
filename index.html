@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Toolbox - Free Online AI Tools</title>
+
+  <meta name="description" content="AI Toolbox — Free AI tools for images, writing, social media and productivity. No login required in this demo.">
+  <meta name="keywords" content="AI tools, free AI tools, image AI, resume builder, AI summarizer, instagram caption generator">
+  <meta property="og:title" content="AI Toolbox - Free AI Tools" />
+  <meta property="og:description" content="Background remover, resume generator, summarizer, caption generator and more. Free forever." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/public/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="/public/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">AI</span>
+      <span class="brand-text">Toolbox</span>
+    </div>
+    <nav class="nav">
+      <a href="#home" data-view="home" class="nav-link active">Home</a>
+      <a href="#tools" data-view="tools" class="nav-link">Tools</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <!-- HOME VIEW -->
+    <section id="home-view" class="view active">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Free AI tools for everyone</h1>
+          <p>
+            Boost your productivity and creativity with fast, powerful and free AI tools.
+            No login required in this demo version. You can later connect this UI to real AI APIs and Ad networks.
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary" data-view-target="tools-view">Start using tools</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Featured tools</h2>
+          <ul class="hero-tools">
+            <li data-view-target="tool-bg">AI Background Remover</li>
+            <li data-view-target="tool-ig">Instagram Post Generator</li>
+            <li data-view-target="tool-sum">PDF & Text Summarizer</li>
+            <li data-view-target="tool-cv">AI Resume Builder</li>
+            <li data-view-target="tool-tag">Hashtag Generator</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="categories">
+        <h2>Categories</h2>
+        <div class="category-grid">
+          <article class="category-card">
+            <h3>Image AI</h3>
+            <p>Background removal, face enhancement and meme creation.</p>
+          </article>
+          <article class="category-card">
+            <h3>Writing AI</h3>
+            <p>Emails, resumes, summaries and basic grammar polish.</p>
+          </article>
+          <article class="category-card">
+            <h3>Social Media AI</h3>
+            <p>Captions, posts, hashtags and visual ideas.</p>
+          </article>
+          <article class="category-card">
+            <h3>Productivity AI</h3>
+            <p>Turn long content into clear, actionable ideas.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <!-- TOOLS VIEW (wrapper) -->
+    <section id="tools-view" class="view">
+      <h1 class="page-title">AI Tools</h1>
+      <p class="page-subtitle">Minimal frontend prototype. Each tool can be connected to a real AI model later.</p>
+
+      <div class="tools-grid">
+        <button class="tool-card" data-view-target="tool-bg">
+          <h2>AI Background Remover</h2>
+          <p>Upload an image and preview foreground on a transparent-like background.</p>
+        </button>
+
+        <button class="tool-card" data-view-target="tool-face">
+          <h2>Face Upscaler (Demo)</h2>
+          <p>Simulate sharper, more vivid portraits in one click.</p>
+        </button>
+
+        <button class="tool-card" data-view-target="tool-meme">
+          <h2>Meme Generator</h2>
+          <p>Turn any picture into a classic meme with text.</p>
+        </button>
+
+        <button class="tool-card" data-view-target="tool-ig">
+          <h2>Instagram Post Generator</h2>
+          <p>Create engaging captions from a few keywords.</p>
+        </button>
+
+        <button class="tool-card" data-view-target="tool-tag">
+          <h2>Hashtag Generator</h2>
+          <p>Generate hashtag sets for Instagram & TikTok.</p>
+        </button>
+
+        <button class="tool-card" data-view-target="tool-sum">
+          <h2>PDF & Text Summarizer</h2>
+          <p>Paste or upload text and get a shorter summary.</p>
+        </button>
+
+        <button class="tool-card" data-view-target="tool-cv">
+          <h2>AI Resume Builder</h2>
+          <p>Generate a clean CV layout from a simple form.</p>
+        </button>
+
+        <button class="tool-card" data-view-target="tool-gram">
+          <h2>Grammar Helper (Demo)</h2>
+          <p>Lightweight cleanup of spacing and basic punctuation.</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- TOOL: BACKGROUND REMOVER -->
+    <section id="tool-bg" class="view tool-view">
+      <button class="back-btn" data-view-target="tools-view">← Back to tools</button>
+      <h1>AI Background Remover (Demo)</h1>
+      <p class="tool-description">
+        This demo previews your image on a checkerboard to simulate transparency.
+        Real background removal can be added by connecting an AI/image API.
+      </p>
+
+      <div class="tool-layout two-cols">
+        <div class="tool-panel">
+          <label class="field">
+            <span>Upload image</span>
+            <input type="file" id="bg-input" accept="image/*" />
+          </label>
+        </div>
+        <div class="tool-output">
+          <div class="checkerboard">
+            <img id="bg-preview" alt="Preview" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOL: FACE UPSCALER -->
+    <section id="tool-face" class="view tool-view">
+      <button class="back-btn" data-view-target="tools-view">← Back to tools</button>
+      <h1>Face Upscaler (Visual Demo)</h1>
+      <p class="tool-description">
+        This is a visual demo that applies gentle filters to simulate a sharper look.
+        A real face upscaler can later be powered by dedicated image models.
+      </p>
+
+      <div class="tool-layout two-cols">
+        <div class="tool-panel">
+          <label class="field">
+            <span>Upload portrait image</span>
+            <input type="file" id="face-input" accept="image/*" />
+          </label>
+          <label class="field">
+            <span>Enhancement level</span>
+            <input type="range" id="face-level" min="0" max="100" value="40" />
+          </label>
+        </div>
+        <div class="tool-output">
+          <div class="checkerboard">
+            <img id="face-preview" alt="Enhanced preview" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOL: MEME GENERATOR -->
+    <section id="tool-meme" class="view tool-view">
+      <button class="back-btn" data-view-target="tools-view">← Back to tools</button>
+      <h1>Meme Generator (Canvas Demo)</h1>
+      <p class="tool-description">
+        Upload a picture, add top and bottom text and download a meme-style image.
+      </p>
+
+      <div class="tool-layout two-cols">
+        <div class="tool-panel">
+          <label class="field">
+            <span>Upload image</span>
+            <input type="file" id="meme-input" accept="image/*" />
+          </label>
+          <label class="field">
+            <span>Top text</span>
+            <input type="text" id="meme-top" placeholder="TOP TEXT" />
+          </label>
+          <label class="field">
+            <span>Bottom text</span>
+            <input type="text" id="meme-bottom" placeholder="BOTTOM TEXT" />
+          </label>
+          <button class="btn primary" id="meme-generate">Render meme</button>
+          <button class="btn ghost" id="meme-download">Download meme</button>
+        </div>
+        <div class="tool-output">
+          <canvas id="meme-canvas"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOL: INSTAGRAM POST GENERATOR -->
+    <section id="tool-ig" class="view tool-view">
+      <button class="back-btn" data-view-target="tools-view">← Back to tools</button>
+      <h1>Instagram Post Generator (Demo)</h1>
+      <p class="tool-description">
+        Type a topic and tone. The demo generates structured captions using simple rules.
+        You can later connect this to an AI text API.
+      </p>
+
+      <div class="tool-layout two-cols">
+        <div class="tool-panel">
+          <label class="field">
+            <span>Post topic</span>
+            <input type="text" id="ig-topic" placeholder="e.g. pizza night, gym motivation" />
+          </label>
+          <label class="field">
+            <span>Tone</span>
+            <select id="ig-tone">
+              <option value="friendly">Friendly</option>
+              <option value="funny">Funny</option>
+              <option value="professional">Professional</option>
+              <option value="motivational">Motivational</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Desired length</span>
+            <select id="ig-length">
+              <option value="short">Short</option>
+              <option value="medium" selected>Medium</option>
+              <option value="long">Long</option>
+            </select>
+          </label>
+          <button class="btn primary" id="ig-generate">Generate caption</button>
+        </div>
+        <div class="tool-output">
+          <label class="field">
+            <span>Generated caption</span>
+            <textarea id="ig-result" rows="10" readonly></textarea>
+          </label>
+          <button class="btn ghost" id="ig-copy">Copy to clipboard</button>
+          <p class="hint" id="ig-copy-hint"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOL: SUMMARIZER -->
+    <section id="tool-sum" class="view tool-view">
+      <button class="back-btn" data-view-target="tools-view">← Back to tools</button>
+      <h1>PDF & Text Summarizer (Demo)</h1>
+      <p class="tool-description">
+        Paste text and choose the level of compression. The demo uses simple slicing logic.
+        A real AI summarizer can be plugged later.
+      </p>
+
+      <div class="tool-layout two-cols">
+        <div class="tool-panel">
+          <label class="field">
+            <span>Input text</span>
+            <textarea id="sum-input" rows="12" placeholder="Paste here your text or notes..."></textarea>
+          </label>
+          <label class="field">
+            <span>Summary length</span>
+            <select id="sum-length">
+              <option value="short">Short</option>
+              <option value="medium" selected>Medium</option>
+              <option value="long">Long</option>
+            </select>
+          </label>
+          <button class="btn primary" id="sum-generate">Generate summary</button>
+        </div>
+        <div class="tool-output">
+          <label class="field">
+            <span>Summary</span>
+            <textarea id="sum-result" rows="12" readonly></textarea>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOL: RESUME BUILDER -->
+    <section id="tool-cv" class="view tool-view">
+      <button class="back-btn" data-view-target="tools-view">← Back to tools</button>
+      <h1>AI Resume Builder (Demo)</h1>
+      <p class="tool-description">
+        Fill the form and get a clean text CV layout. Later you can convert it into a nice PDF.
+      </p>
+
+      <div class="tool-layout two-cols">
+        <div class="tool-panel">
+          <label class="field">
+            <span>Full name</span>
+            <input type="text" id="cv-name" placeholder="John Doe" />
+          </label>
+          <label class="field">
+            <span>Job title</span>
+            <input type="text" id="cv-title" placeholder="Software Developer" />
+          </label>
+          <label class="field">
+            <span>Profile summary</span>
+            <textarea id="cv-summary" rows="3" placeholder="Short professional summary..."></textarea>
+          </label>
+          <label class="field">
+            <span>Experience (one per line)</span>
+            <textarea id="cv-exp" rows="4" placeholder="Role – Company – Years"></textarea>
+          </label>
+          <label class="field">
+            <span>Education (one per line)</span>
+            <textarea id="cv-edu" rows="3" placeholder="Degree – Institution – Year"></textarea>
+          </label>
+          <label class="field">
+            <span>Skills (comma separated)</span>
+            <input type="text" id="cv-skills" placeholder="JavaScript, React, Node.js" />
+          </label>
+          <button class="btn primary" id="cv-generate">Generate CV</button>
+        </div>
+        <div class="tool-output">
+          <label class="field">
+            <span>Generated CV</span>
+            <textarea id="cv-result" rows="16" readonly></textarea>
+          </label>
+          <button class="btn ghost" id="cv-copy">Copy to clipboard</button>
+          <p class="hint" id="cv-copy-hint"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOL: HASHTAG GENERATOR -->
+    <section id="tool-tag" class="view tool-view">
+      <button class="back-btn" data-view-target="tools-view">← Back to tools</button>
+      <h1>Hashtag Generator (Demo)</h1>
+      <p class="tool-description">
+        Provide a topic and platform. The demo uses simple keyword combinations.
+        You can later replace this logic with a real AI model.
+      </p>
+
+      <div class="tool-layout two-cols">
+        <div class="tool-panel">
+          <label class="field">
+            <span>Topic / niche</span>
+            <input type="text" id="tag-topic" placeholder="e.g. fitness, pizza, travel" />
+          </label>
+          <label class="field">
+            <span>Platform</span>
+            <select id="tag-platform">
+              <option value="generic">Generic</option>
+              <option value="instagram">Instagram</option>
+              <option value="tiktok">TikTok</option>
+              <option value="youtube">YouTube</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Intensity</span>
+            <select id="tag-count">
+              <option value="15">15 hashtags</option>
+              <option value="30" selected>30 hashtags</option>
+              <option value="60">60 hashtags</option>
+            </select>
+          </label>
+          <button class="btn primary" id="tag-generate">Generate hashtags</button>
+        </div>
+        <div class="tool-output">
+          <label class="field">
+            <span>Hashtags</span>
+            <textarea id="tag-result" rows="12" readonly></textarea>
+          </label>
+          <button class="btn ghost" id="tag-copy">Copy to clipboard</button>
+          <p class="hint" id="tag-copy-hint"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOL: GRAMMAR HELPER -->
+    <section id="tool-gram" class="view tool-view">
+      <button class="back-btn" data-view-target="tools-view">← Back to tools</button>
+      <h1>Grammar Helper (Light Demo)</h1>
+      <p class="tool-description">
+        This helper applies simple cleanups: extra spaces, basic capitalization and final punctuation.
+        It is not a full grammar checker, but a lightweight pre-clean step.
+      </p>
+
+      <div class="tool-layout two-cols">
+        <div class="tool-panel">
+          <label class="field">
+            <span>Text to clean</span>
+            <textarea id="gram-input" rows="10" placeholder="Paste your text here..."></textarea>
+          </label>
+          <button class="btn primary" id="gram-fix">Clean text</button>
+        </div>
+        <div class="tool-output">
+          <label class="field">
+            <span>Cleaned text</span>
+            <textarea id="gram-result" rows="10" readonly></textarea>
+          </label>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> AI Toolbox · Demo frontend. Connect it to real AI backends and ad networks when ready.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
